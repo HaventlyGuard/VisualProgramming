@@ -1,4 +1,4 @@
-@media screen and (width > 280px){
+@media screen and (width > 482px){
     body{
         margin: 0;
         padding: 0;
@@ -10,7 +10,7 @@
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         text-align: center;
         font-weight: 500;
-        font-size: 28px;
+        font-size: 31px;
         color: white;
         letter-spacing: 0px;
     }
@@ -27,6 +27,7 @@
     }
 
     .meet-wisp{
+        width: 100%;
         text-align: center;
         align-self: center;
         background-color:rgb(27, 84, 221) ;
@@ -36,7 +37,8 @@
     .meet-wisp h2,p {
         padding-top: 32px;
         margin-top: 0px;
-    }
+    }   
+
 
     .meet-text{
         font-family: inter;
@@ -60,11 +62,11 @@
 
     .cats-container {
         display: grid;
-        grid-template-rows: repeat(3, auto);
+        grid-template-rows: 1;
         gap: 20px;
         margin-top: 32px ;
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 20px;
+        margin-right: 20px;
         font-family: inter;
         justify-items: center;
     }
@@ -136,19 +138,213 @@
         height: 211px;
         margin-bottom: 0;
         font-family: inter;
-        padding: 0; /* Убираем отступы */
-        text-align: center; /* Центрируем текст */
+        padding: 0; 
+        text-align: center; 
     }
     
     .icons {
-        justify-content: center; /* Центрируем иконки */
-        margin-bottom: 10px; /* Отступ между иконками и текстом */
+        justify-content: center; 
+        margin-bottom: 10px; 
         padding-top: 26px;
     }
     
     .footer img {
         height: 22px;
-        margin: 0 36px; /* Отступы между иконками */
+        margin: 0 36px; 
+    }
+
+    .text-com{
+        font-family: inter;
+        font-size: 14px;
+    }
+
+    .text-com2 {
+        font-family: inter;
+        font-size: 10px;
+        padding-bottom: 16px;
+        padding-top: 8px;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (width <= 482px){
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .Header{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align: center;
+        font-weight: 500;
+        font-size: 28px;
+        color: white;
+        letter-spacing: 0px;
+    }
+
+    h1{
+        font-family: inter;
+        font-size: 36px;
+        text-align: center;
+    }
+
+    h2{
+        font-family: inter;
+        font-size: 24px;
+    }
+
+    .meet-wisp-cat{
+        height: 135px;
+        width: 240px;
+    }
+
+    .meet-wisp{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        align-self: center;
+        background-color:rgb(27, 84, 221) ;
+        color: white;
+    }
+
+    .meet-wisp h2,p {
+        padding-top: 32px;
+        margin-top: 0px;
+    }
+
+    .meet-text{
+        padding-left: 20px;
+        padding-right: 20px;
+        font-family: inter;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .btn-meet-cat{
+        margin-top: 32px;
+        margin-bottom: 32px;
+        color: rgb(26, 32, 40);
+        background-color: white;
+        height: 41px;
+        width: 110px;
+        font-family: inter;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        border: none;
+    }
+
+    .cats-container {
+       display: flex;
+        flex-direction: column; 
+        margin-bottom: 16px;
+        padding: 0;
+        margin-left: 20px;
+        margin-right: 20px; 
+        font-family: inter;
+        justify-items: center;
+    }
+
+    .cats-container h2{
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+
+
+    .cats-container a{
+        color: rgb(27, 84, 221);
+        padding-top: 16px;
+        padding-bottom: 16px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .the-latest{
+        padding: 0;
+        margin: 0;
+    }
+    .cats-container a:hover{
+        color: rgb(27, 84, 221);
+        padding-top: 16px;
+        font-weight: 600;
+        text-decoration:underline;
+    }
+
+    .cat-row {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .cat-row img{
+        padding: 0;
+        margin: 0;
+        margin-bottom: 0;
+    }
+
+    .wh-cat-img {
+
+        margin-top: 16px; 
+
+    }
+
+    .wh-cat-img img{
+        height: 240px;
+        width: 240px;
+    }
+
+    .whats-happening, .the-intrigue, .the-latest {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        padding: 0;
+        text-align: center; 
+        padding-left: 0; 
+        padding-right: 0; 
+    }
+
+    .btn-cats-info{
+        margin-top: 32px;
+        margin-bottom: 32px;
+        color: white;
+        background-color: rgb(27, 84, 221);
+        height: 41px;
+        width: 110px;
+        font-family: inter;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        border: none;
+        align-self: center;
+    }
+
+    .footer {
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(232, 232, 232);
+        width: 100%;
+        height: 211px;
+        margin-bottom: 0;
+        font-family: inter;
+        padding: 0; 
+        text-align: center; 
+    }
+    
+    .icons {
+        justify-content: center; 
+        vertical-align: middle;
+        margin-bottom: 10px; 
+        padding-top: 26px;
+    }
+    
+    .footer img {
+        height: 20px;
+        margin: 0 32px; 
     }
 
     .text-com{
