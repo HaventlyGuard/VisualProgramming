@@ -142,7 +142,7 @@ footer{
     background-color: rgb(0, 255, 4);
 }
 
-.flex-dir1{
+.flex-dir1 .box{
     display: flex;
-    flex-direction: column      ;
+    flex-direction: row;
 }
