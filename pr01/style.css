@@ -4,7 +4,7 @@
 }
 
 .Header1{
-    background-image: url("/img-20250204/zenith-bg.png");
+    background-image: url("img-20250204/zenith-bg.png");
     color: white;
     display: flex;
     flex-direction: column;
