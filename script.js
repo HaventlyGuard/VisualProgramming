@@ -1,32 +1,39 @@
-function orderBy(arr, method){
-    testObject(arr, method);
+function orderBy(arr, methods) {
+    validateArray(arr);
     const copyArr = arr.slice();
-    copyArr.sort((a,b) => {
-        for (let property of method)
-        {
-            if (a[property] < b[property]){
-                return -1;
-            }
-
-            if (a[property] > b[property]){
-                return 1;
-            }
-
-            if(!(property in a) || !(property in b)){
-                throw Error("Все элементы должны содержать имя и возраст");
+    for (let item of copyArr) {
+        for (let property of methods) {
+            if (!(property in item)) {
+                throw new Error("Все элементы должны содержать имя и возраст");
             }
         }
-        return 0;
+    }
+
+    copyArr.sort((a, b) => {
+        for (let property of methods) {
+            if (a[property] < b[property]) {
+                return -1;
+            }
+            if (a[property] > b[property]) {
+                return 1;
+            }
+        }
+        return 0; 
     });
+
     return copyArr;
 }
 
-export function testObject(arr, method){
-    for (let item of arr)
-        {
-            if(typeof item !== 'object' || typeof item === null){
-                throw new Error("В массиве должны быть все объекты");
-            }
+function validateArray(arr) {
+    if (!Array.isArray(arr)) {
+        throw new Error("Входные данные должны быть массивом");
+    }
+
+    for (let item of arr) {
+        if (typeof item !== 'object' || item === null) {
+            throw new Error("В массиве должны быть все объекты");
         }
+    }
 }
 
+module.exports = { validateArray, orderBy };
