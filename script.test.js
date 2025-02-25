@@ -4,11 +4,13 @@ const data = [
     { name: "Gunzenov", age: 88 },
     { name: "Oleg", age: 25 },
     { name: "Igor", age: 20 },
+    { name: "Igor", age: 19 },
     { name: "Lev", age: 14 }
 ];
 
 const sortedData = [
     { name: "Gunzenov", age: 88 },
+    { name: "Igor", age: 19 },
     { name: "Igor", age: 20 },
     { name: "Lev", age: 14 },
     { name: "Oleg", age: 25 }
