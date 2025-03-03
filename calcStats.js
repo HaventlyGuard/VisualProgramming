@@ -10,6 +10,6 @@ export function calcStats(catsInfo) {
 }
 
 export const calcStatsFromAPI = async () => { 
-    const catsInfo = await loadData(); // Используйте await для загрузки данных
+    const catsInfo = await loadData(); 
     return calcStats(catsInfo);
 };

@@ -1,4 +1,4 @@
-export async function loadData() { // Используем экспорт по умолчанию
+export async function loadData() { 
     const dataArr = [];
     let nextPageUrl = 'https://catfact.ninja/breeds';
 
@@ -6,7 +6,7 @@ export async function loadData() { // Используем экспорт по �
         while (nextPageUrl) {
             const response = await fetch(nextPageUrl);
             const data = await response.json();
-            dataArr.push(...data.data); // Используем spread оператор для добавления данных
+            dataArr.push(...data.data); 
             nextPageUrl = data.next_page_url;
         }
     } catch (error) {
