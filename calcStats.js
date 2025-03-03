@@ -1,16 +1,15 @@
-async function calcStats(catsInfo) {
-    const stats = {};
+import { loadData } from './loadData.js';
 
+export function calcStats(catsInfo) {
+    const stats = {};
     catsInfo.forEach(cat => {
         const country = cat.country;
-        if (stats[country]) {
-            stats[country] += 1; 
-        } else {
-            stats[country] = 1; 
-        }
+        stats[country] = (stats[country] || 0) + 1;
     });
-
     return stats; 
 }
 
-exports.modul = {calcStats}
+export const calcStatsFromAPI = async () => { 
+    const catsInfo = await loadData(); // Используйте await для загрузки данных
+    return calcStats(catsInfo);
+};
