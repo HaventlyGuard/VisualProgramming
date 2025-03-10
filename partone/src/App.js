@@ -18,7 +18,7 @@ function App() {
     const fetchBookImage = async (ibsn) => {
       const response = await fetch (`https://www.googleapis.com/books/v1/volumes`);
       const data = await response.json();
-      return data.items && data.items.length > 0 ? data.items[0].volumeInfo.imageLinks.thumbnail : altPhoto;
+      return data.items && data.items.length > 0 ? data.items[0].volumeInfo.imageLinks.thumbnail : "";
     };
 
     fetchBooks();
