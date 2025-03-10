@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect } from 'react';
 import altPhoto from './altImg.png';
+import Book from './book'
+import React, {useEffect} from 'react';
 
 function App() {
   const [books, setBooks] = React.useState([]);
