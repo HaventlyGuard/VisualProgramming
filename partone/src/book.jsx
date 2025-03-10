@@ -1,23 +1,20 @@
-import React from "react";
-import Buttom from "./Button";
+import React from 'react'
 
-function Book({...props}){
-    if (!props.books || props.books.length ===0){
-        return <p>Доступных книг нет</p>;
+function Book({...props}) {
+    if(!props.books || props.books.length === 0) {
+        return <p>Загрузка...</p>
     }
-
     return (
-        <div className="bookBox">
-            {props.books.map((book, id) => {
-                <div key={id} className="card">
-                    <img src={book.imageUrl} alt={book.tittle} />
-                    <h3>{book.tittle}</h3>
-                    <p>{book.authors.join(', ')}</p>
-                    <Button />
+        <div className='book_pattern'>
+            {props.books.map((book,id) => (
+                <div key={id} className='pattern'>
+                    <img src={book.coverImage} alt={book.title}/>
+                    <p className='text_header'>{book.title}</p>
+                    <p className='text_authors'>{book.authors.join(', ')}</p>
                 </div>
-            })}
+            ))}
         </div>
-    )
+    );
 }
 
 export default Book;
