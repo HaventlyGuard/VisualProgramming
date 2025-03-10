@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
+import altPhoto from './altImg.png';
 
 function App() {
   const [books, setBooks] = React.useState([]);
@@ -18,7 +19,7 @@ function App() {
     const fetchBookImage = async (ibsn) => {
       const response = await fetch (`https://www.googleapis.com/books/v1/volumes`);
       const data = await response.json();
-      return data.items && data.items.length > 0 ? data.items[0].volumeInfo.imageLinks.thumbnail : "";
+      return data.items && data.items.length > 0 ? data.items[0].volumeInfo.imageLinks.thumbnail : altPhoto;
     };
 
     fetchBooks();
