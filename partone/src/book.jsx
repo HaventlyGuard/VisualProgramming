@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import Button from './Button';
+import './ButtonStyle.css';
+import './App.css';
 
 function Book({...props}) {
     if(!props.books || props.books.length === 0) {
@@ -11,6 +14,7 @@ function Book({...props}) {
                     <img src={book.coverImage} alt={book.title}/>
                     <p className='text_header'>{book.title}</p>
                     <p className='text_authors'>{book.authors.join(', ')}</p>
+                    <Button/>
                 </div>
             ))}
         </div>

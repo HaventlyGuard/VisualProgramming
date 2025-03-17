@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@400;600;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.search_and_sort{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 35px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+search_and_sort::placeholder{
+    color: white;
+    padding-left: 10px;
+}
+
+.text_p{
+    color: white;
+    padding-left: 50px ;
+    padding-right: 10px;
+    align-content: center;
+}
+
+.search_and_sort input{
+    
+    background-color: transparent;
+    border: 1px solid aqua;
+    border-radius: 25px;
+    padding: 2px;
+    color: white;
+    padding-left: 10px;
+}
+
+select{
+    background-color: transparent;
+    border: 2px solid aqua;
+    border-radius: 25px;
+    color: white;
+    padding-left: 10px;
+}
+
+select:focus{
+    color: black;
+}

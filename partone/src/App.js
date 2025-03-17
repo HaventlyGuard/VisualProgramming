@@ -1,10 +1,18 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import altImg from './img/altImg.png';
 import Book from "./Book";
+import './ButtonStyle.css';
+import Button from './Button';
+import Search from './Components/Search';
+import SearchAndSort from './SortAndSearch';
 
 function App() {
-  const [books, setBooks] = React.useState([])
+  const [books, setBooks] = React.useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortOption, setSortOption] = useState('title');
+  const [sortDirection, setSortDirection] = useState(false);
+  
 
   useEffect(() => {
     const fetchBooks = async() => {
@@ -24,12 +32,35 @@ function App() {
     }
 
     fetchBooks();
-  }, [])
-  return ( 
-    <div className = 'App' >
-      <Book books = { books }/>
-    </div>
-  );
+  }, []);
+
+    
+  const filteredBooks = books
+  .filter(book => book.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    book.authors.some(author => author.toLowerCase().includes(searchTerm.toLowerCase())))
+  .sort((a,b) => {
+    let comparison = 0;
+    if (sortOption === 'title') {
+      comparison = a.title.localeCompare(b.title);
+    } else {
+      comparison = a.authors[0].localeCompare(b.authors[0]);
+    }
+    return sortDirection ? -comparison : comparison;
+  })
+
+return ( 
+  <div className = 'App' >
+    <SearchAndSort 
+      searchTerm={searchTerm}
+      setSearchTerm={setSearchTerm}
+      sortOption={sortOption}
+      setSortOption={setSortOption}
+      sortDirection={sortDirection}
+      setSortDirection={setSortDirection} 
+    />
+    <Book books = { filteredBooks }/>
+  </div>
+);
 }
 
 export default App;
