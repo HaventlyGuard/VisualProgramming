@@ -1,27 +1,88 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
-import SelectCity from './Components/CiteSelect';
-import "./App.css";
-import Weather from './Components/Weather';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import WeatherForecast from './components/WeatherForecast/WeatherForecast';
+import CityModal from './components/CityModal/CityModal';
+import WeatherNow from './components/WeatherNow/WeatherNow'
+import './App.css'
 
 function App() {
+  const [weatherData, setWeatherData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [city, setCity] = useState({
+    name: 'Москва, RU',
+    coords: { lat: '55.75', lon: '37.62' }
+  });
+  const [weatherClass, setWeatherClass] = useState('weather-clear');
 
-  const [coordinates, setCoordinates] = useState(null);
+  const getWeatherClass = (weatherId) => {
+    if (weatherId >= 200 && weatherId < 300) return 'weather-thunderstorm';
+    if (weatherId >= 300 && weatherId < 400) return 'weather-rain';
+    if (weatherId >= 500 && weatherId < 600) return 'weather-rain';
+    if (weatherId >= 600 && weatherId < 700) return 'weather-snow';
+    if (weatherId >= 700 && weatherId < 800) return 'weather-fog';
+    if (weatherId === 800) return 'weather-clear';
+    if (weatherId > 800) return 'weather-clouds';
+    return 'weather-clear';
+  };
 
-  const handleCitySelect = (lat, lon) => {
-    setCoordinates({lat,lon});
+  const fetchWeather = async (lat, lon) => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=61740dedc36fc060c18185927012db16&units=metric&lang=ru`
+      );
+      setForecastData(response.data);
+      
+      const responseweather = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=61740dedc36fc060c18185927012db16&units=metric&lang=ru`
+      );
+      setWeatherData(responseweather.data);
+      
+      setWeatherClass(getWeatherClass(responseweather.data.weather[0].id));
+    } catch (error) {
+      console.error("Ошибка при загрузке погоды:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchWeather(city.coords.lat, city.coords.lon);
+  }, [city]);
+
+  const handleCitySelect = (newCity) => {
+    setCity({
+      name: newCity.name,
+      coords: { lat: newCity.lat.toString(), lon: newCity.lon.toString() }
+    });
+  };
+
+  if (loading && !forecastData) {
+    return <div>Загрузка данных о погоде...</div>;
   }
-  const apiKey = '61740dedc36fc060c18185927012db16';
-const url = `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=61740dedc36fc060c18185927012db16`;
 
-  console.log(`Коорды: ${coordinates} ${coordinates.lat} ${coordinates.lon}`)
   return (
-    <div className="main-div">
-      <div>
-      <SelectCity citySelect={handleCitySelect}/>
-      {coordinates && <Weather lat={coordinates.lat} lon={coordinates.lon}/>}
-      </div>
+    <div>
+      <WeatherNow 
+        weatherData={weatherData} 
+        cityName={city.name}
+        onChangeCity={() => setModalOpen(true)}
+        weatherClass={weatherClass}
+      />
+
+      <WeatherForecast 
+        forecastData={forecastData} 
+        cityName={city.name}
+        onChangeCity={() => setModalOpen(true)}
+      />
+      
+      <CityModal 
+        isOpen={modalOpen} 
+        onClose={() => setModalOpen(false)}
+        onCitySelect={handleCitySelect}
+      />
     </div>
   );
 }

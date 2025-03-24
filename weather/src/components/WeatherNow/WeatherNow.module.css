@@ -1,0 +1,112 @@
+.header {
+    max-width: 900px; /* Увеличена максимальная ширина */
+    margin: 0 auto;
+    margin-top: 15px; /* Увеличен верхний отступ */
+    padding: 25px; /* Увеличен отступ */
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px; /* Увеличен радиус скругления */
+}
+
+.general{
+    display: flex;
+    max-width: 1200px; 
+    margin: 0 auto;
+    margin-top: 15px; 
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 90px; 
+}
+.block_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather_now {
+    display: flex;
+    gap: 20px; /* Увеличен промежуток между элементами */
+}
+
+.img {
+    width: 220px; /* Увеличена ширина */
+    height: 220px; /* Увеличена высота */
+}
+
+.text {
+    margin-top: 5px; /* Увеличен верхний отступ */
+    margin-bottom: 25px; /* Увеличен нижний отступ */
+    color: white;
+}
+
+.text_p1, .text_p2, .text_p3 {
+    margin-block: 28px; /* Увеличены отступы */
+    color: white;
+}
+
+.text_p1 {
+    margin-top: 70px; /* Увеличен верхний отступ */
+    font-size: 36px; /* Увеличен размер шрифта */
+    font-weight: 700;
+    font-style: italic;
+}
+
+.text_p2 {
+    font-size: 26px; /* Увеличен размер шрифта */
+    font-weight: 500;
+    margin-bottom: 10px; /* Увеличен нижний отступ */
+}
+
+.text_p3 {
+    margin-top: 10px; /* Увеличен верхний отступ */
+    font-size: 26px; /* Увеличен размер шрифта */
+    font-weight: 500;
+    opacity: 0.85; /* Изменена прозрачность */
+}
+
+.button {
+    background-color: black;
+}
+
+
+
+.weather-clear {
+    width: 1200px;
+    border-radius: 90px; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                      url('backclean.jpg');
+}
+
+.weather-clouds {
+    border-radius: 90px; 
+    width: 1200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                      url('backcloud.png');
+}
+
+.weather-rain {
+    border-radius: 90px; 
+    width: 1200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                      url('backrain.png');
+}
+
+.weather-thunderstorm {
+    border-radius: 90px; 
+    width: 1200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('backthund.jpg');
+}
+
+.weather-snow {
+    border-radius: 90px; 
+    width: 1200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                      url('backsnow.jpg');
+}
+
+.weather-fog {
+    border-radius: 90px; 
+    width: 1200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                      url('backfog.png');
+}
