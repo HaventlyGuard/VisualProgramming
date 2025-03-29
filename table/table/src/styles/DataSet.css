@@ -1,0 +1,55 @@
+/* Основные стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+/* Стили для заголовка таблицы */
+thead {
+    background-color: #4CAF50; /* Цвет фона заголовка */
+    color: white; /* Цвет текста заголовка */
+}
+
+th, td {
+    padding: 12px; /* Отступы в ячейках */
+    border: 1px solid #ddd; /* Граница ячеек */
+}
+
+tr:hover {
+    background-color: #ddd; /* Цвет фона при наведении на строку */
+}
+
+/* Стили для выделенных строк */
+.selected {
+    background-color: #d3d3d3; /* Цвет фона выделенной строки */
+}
+
+/* Стили для ячейки выбора */
+.selected-cell {
+    cursor: pointer; /* Указатель при наведении */
+    font-weight: bold; /* Жирный шрифт */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #4CAF50; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: inline-block; /* Отображение в виде блока */
+    font-size: 16px; /* Размер шрифта */
+    margin: 4px 2px; /* Отступы вокруг кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    border-radius: 5px; /* Скругление углов */
+}
+
+/* Стили для кнопки при наведении */
+button:hover {
+    background-color: #45a049; /* Цвет кнопки при наведении */
+}
