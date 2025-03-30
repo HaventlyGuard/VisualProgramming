@@ -2,8 +2,7 @@ import '../styles/DataSet.css';
 
 function DataSet({ headers, data, renderRow, renderHeader, setSelectRows, selectRows }) {
     const handleRowClick = (item, event) => {
-        const isCtrlPressed = event.ctrlKey; 
-
+        const isCtrlPressed = event.ctrlKey;
         const isRowSelected = selectRows.includes(item.id);
 
         if (isRowSelected) {
@@ -21,18 +20,16 @@ function DataSet({ headers, data, renderRow, renderHeader, setSelectRows, select
         <table>
             <thead>
                 <tr>
-                    <th></th>
+                    <th>⅓</th> 
                     {headers.map((header, index) => (
                         <th key={index}>{renderHeader ? renderHeader(header) : header.title}</th>
                     ))}
                 </tr>
             </thead>
             <tbody>
-                {data.map((item) => (
-                    <tr key={item.id} className={selectRows.includes(item.id) ? 'selected' : ''}>
-                        <td className='selected-cell' onClick={(event) => handleRowClick(item, event)}>
-                            Select
-                        </td>
+                {data.map((item, index) => (
+                    <tr key={item.id} className={selectRows.includes(item.id) ? 'selected' : ''} onClick={(event) => handleRowClick(item, event)}>
+                        <td className='selected-cell'>{index + 1}</td> 
                         {headers.map((header) => (
                             <td key={header.key}>
                                 {renderRow ? renderRow(item[header.key]) : item[header.key]}

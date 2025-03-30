@@ -53,3 +53,11 @@ button {
 button:hover {
     background-color: #45a049; /* Цвет кнопки при наведении */
 }
+
+.selected-cell {
+    width: 50px;
+    cursor: pointer; /* Указатель при наведении */
+    font-weight: bold; /* Жирный шрифт */
+    text-align: center; /* Выравнивание по центру */
+    background-color: #f9f9f9; /* Цвет фона для номера строки */
+}
