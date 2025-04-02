@@ -1,40 +1,69 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DataSet from './components/DataSet';
+import axios from "axios";
 
 function App() {
   const [selectRows, setSelectRows] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
+  const [fetchDataState, setFetchDataState] = useState([]);
+
+ 
+
   const headers = [
+    { title: 'PostID', key: 'postId' },
     { title: 'ID', key: 'id' },
     { title: 'Name', key: 'name' },
-    { title: 'LastName', key: 'lastname' },
+    { title: 'Email', key: 'email' },
+    { title: 'Body', key: 'body' },
   ];
 
+
+  useEffect(() => {
+    const fetchComments = async () => {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/comments');
+        const fetchData = response.data;
+        console.log(fetchData);
+        setFetchDataState(fetchData);
+        return fetchData;
+      };
+       
+
+   fetchComments();
+  }, []);
+
   const data = [
-    { id: 1, name: 'Джорно', lastname: 'Джована' },
-    { id: 2, name: 'Джотаро', lastname: 'Куджо' },
-    { id: 3, name: 'Стар Платинум', lastname: 'Стэнд' },
-    { id: 4, name: 'Полифем', lastname: 'Калеб' },
-    { id: 5, name: 'Роджер', lastname: 'Браун' },
-    { id: 6, name: 'Энрико', lastname: 'Пуччи' },
-    { id: 7, name: 'Люсифер', lastname: 'Васкез' },
-    { id: 8, name: 'Кен', lastname: 'Судзуки' },
-    { id: 9, name: 'Си Джеи', lastname: 'Стэнд' },
-    { id: 10, name: 'Джоске', lastname: 'Хигашиката' },
-    { id: 11, name: 'Рифт', lastname: 'Гарсия' },
-    { id: 12, name: 'Куинси', lastname: 'Харпер' },
-    { id: 13, name: 'Какаши', lastname: 'Хатаке' },
-    { id: 14, name: 'Джонатан', lastname: 'Джостар' },
-  ];
+    {
+      "postId": 1,
+      "id": 1,
+      "name": "id labore ex et quam laborum",
+      "email": "Eliseo@gardner.biz",
+      "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+    },
+    {
+      "postId": 1,
+      "id": 2,
+      "name": "quo vero reiciendis velit similique earum",
+      "email": "Jayne_Kuhic@sydney.com",
+      "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+    },
+    {
+      "postId": 1,
+      "id": 3,
+      "name": "odio adipisci rerum aut animi",
+      "email": "Nikita@garfield.biz",
+      "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+    }]
+ 
+
 
   return (
     <div className="App">
       <div className='DataTable'>
         <DataSet
           headers={headers}
-          data={data}
+          data={fetchDataState}
           renderRow={(value) => value}
           renderHeader={(header) => header.title}
           selectRows={selectRows}
@@ -45,5 +74,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
