@@ -1,6 +1,14 @@
+import React, { useState, useOptimistic } from 'react';
+import Modal from './Modal';
 import '../styles/DataSet.css';
 
 function DataSet({ headers, data, renderRow, renderHeader, setSelectRows, selectRows }) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [dataList, setDataList] = useState([...data]);
+    const [addedData, updateAddedData] = useOptimistic(data, dataList);
+
+
+
     const handleRowClick = (item, event) => {
         const isCtrlPressed = event.ctrlKey;
         const isRowSelected = selectRows.includes(item.id);
@@ -16,20 +24,27 @@ function DataSet({ headers, data, renderRow, renderHeader, setSelectRows, select
         }
     };
 
+    const handleAddRow = (newRow) => {
+        updateAddedData([...addedData, newRow]);
+    };
+
+    const maxId = Math.max(...dataList.map(item => item.id), 0); 
+
     return (
-        <table>
-            <thead>
+        <>
+            <table>
+                <thead>
                 <tr>
-                    <th>⅓</th> 
+                    <th>⅓</th>
                     {headers.map((header, index) => (
                         <th key={index}>{renderHeader ? renderHeader(header) : header.title}</th>
                     ))}
                 </tr>
-            </thead>
-            <tbody>
-                {data.map((item, index) => (
+                </thead>
+                <tbody>
+                {addedData.map((item, index) => (
                     <tr key={item.id} className={selectRows.includes(item.id) ? 'selected' : ''} onClick={(event) => handleRowClick(item, event)}>
-                        <td className='selected-cell'>{index + 1}</td> 
+                        <td className='selected-cell'>{index + 1}</td>
                         {headers.map((header) => (
                             <td key={header.key}>
                                 {renderRow ? renderRow(item[header.key]) : item[header.key]}
@@ -37,8 +52,20 @@ function DataSet({ headers, data, renderRow, renderHeader, setSelectRows, select
                         ))}
                     </tr>
                 ))}
-            </tbody>
-        </table>
+                <tr>
+                    <td colSpan="6" className="addCell">
+                        <div onClick={() => setIsModalOpen(true)}> Добавить строчку </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                onSubmit={handleAddRow}
+                maxId={maxId}
+            />
+        </>
     );
 }
 

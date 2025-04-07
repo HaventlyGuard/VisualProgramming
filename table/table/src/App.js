@@ -33,6 +33,7 @@ function App() {
    fetchComments();
   }, []);
 
+
   const data = [
     {
       "postId": 1,
