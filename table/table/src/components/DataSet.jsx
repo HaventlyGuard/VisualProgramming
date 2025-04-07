@@ -1,15 +1,26 @@
-import React, { useState, useOptimistic } from 'react';
+import React, { useState } from 'react';
 import Modal from './Modal';
+import EditModal from './EditModal';
 import '../styles/DataSet.css';
 
-function DataSet({ headers, data, renderRow, renderHeader, setSelectRows, selectRows }) {
+function DataSet({ 
+  headers, 
+  data, 
+  renderRow, 
+  renderHeader, 
+  setSelectRows, 
+  selectRows,
+  onAddRow,
+  onDeleteRows,
+  onUpdateRow
+}) {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [dataList, setDataList] = useState([...data]);
-    const [addedData, updateAddedData] = useOptimistic(data, dataList);
-
-
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [editingItem, setEditingItem] = useState(null);
 
     const handleRowClick = (item, event) => {
+        if (event.target.tagName === 'INPUT') return;
+        
         const isCtrlPressed = event.ctrlKey;
         const isRowSelected = selectRows.includes(item.id);
 
@@ -24,46 +35,79 @@ function DataSet({ headers, data, renderRow, renderHeader, setSelectRows, select
         }
     };
 
-    const handleAddRow = (newRow) => {
-        updateAddedData([...addedData, newRow]);
+    const handleDeleteSelected = () => {
+      if (selectRows.length > 0) {
+        onDeleteRows(selectRows);
+      }
     };
 
-    const maxId = Math.max(...dataList.map(item => item.id), 0); 
+    const handleEditItem = (item) => {
+      setEditingItem(item);
+      setIsEditModalOpen(true);
+    };
+
+    const handleSubmitEdit = (updatedData) => {
+      onUpdateRow(editingItem.id, updatedData);
+      setIsEditModalOpen(false);
+    };
 
     return (
         <>
             <table>
                 <thead>
                 <tr>
-                    <th>⅓</th>
+                    
                     {headers.map((header, index) => (
                         <th key={index}>{renderHeader ? renderHeader(header) : header.title}</th>
                     ))}
+                    <th>Действия</th>
                 </tr>
                 </thead>
                 <tbody>
-                {addedData.map((item, index) => (
-                    <tr key={item.id} className={selectRows.includes(item.id) ? 'selected' : ''} onClick={(event) => handleRowClick(item, event)}>
-                        <td className='selected-cell'>{index + 1}</td>
+                {data.map((item) => (
+                    <tr 
+                      key={item.id} 
+                      className={selectRows.includes(item.id) ? 'selected' : ''}
+                    >
+                    
                         {headers.map((header) => (
-                            <td key={header.key}>
+                            <td 
+                              key={header.key}
+                              onClick={(event) => handleRowClick(item, event)}
+                            >
                                 {renderRow ? renderRow(item[header.key]) : item[header.key]}
                             </td>
                         ))}
+                        <td>
+                          <button onClick={() => handleEditItem(item)}>Редактировать</button>
+                        </td>
                     </tr>
                 ))}
-                <tr>
-                    <td colSpan="6" className="addCell">
-                        <div onClick={() => setIsModalOpen(true)}> Добавить строчку </div>
-                    </td>
-                </tr>
                 </tbody>
             </table>
+
+            <div className="actions">
+              <button onClick={() => setIsModalOpen(true)}>Добавить</button>
+              <button 
+                onClick={handleDeleteSelected}
+                disabled={selectRows.length === 0}
+              >
+                Удалить выбранные ({selectRows.length})
+              </button>
+            </div>
+
             <Modal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                onSubmit={handleAddRow}
-                maxId={maxId}
+                onSubmit={onAddRow}
+            />
+
+            <EditModal
+                isOpen={isEditModalOpen}
+                onClose={() => setIsEditModalOpen(false)}
+                onSubmit={handleSubmitEdit}
+                initialData={editingItem}
+                headers={headers}
             />
         </>
     );
