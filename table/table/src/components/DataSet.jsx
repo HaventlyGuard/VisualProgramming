@@ -3,24 +3,25 @@ import Modal from './Modal';
 import EditModal from './EditModal';
 import '../styles/DataSet.css';
 
-function DataSet({ 
-  headers, 
-  data, 
-  renderRow, 
-  renderHeader, 
-  setSelectRows, 
-  selectRows,
-  onAddRow,
-  onDeleteRows,
-  onUpdateRow
-}) {
+function DataSet({
+                     headers,
+                     data,
+                     renderRow,
+                     renderHeader,
+                     setSelectRows,
+                     selectRows,
+                     onAddRow,
+                     onDeleteRows,
+                     onUpdateRow,
+                     validationSchema
+                 }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [editingItem, setEditingItem] = useState(null);
 
     const handleRowClick = (item, event) => {
         if (event.target.tagName === 'INPUT') return;
-        
+
         const isCtrlPressed = event.ctrlKey;
         const isRowSelected = selectRows.includes(item.id);
 
@@ -36,19 +37,19 @@ function DataSet({
     };
 
     const handleDeleteSelected = () => {
-      if (selectRows.length > 0) {
-        onDeleteRows(selectRows);
-      }
+        if (selectRows.length > 0) {
+            onDeleteRows(selectRows);
+        }
     };
 
     const handleEditItem = (item) => {
-      setEditingItem(item);
-      setIsEditModalOpen(true);
+        setEditingItem(item);
+        setIsEditModalOpen(true);
     };
 
     const handleSubmitEdit = (updatedData) => {
-      onUpdateRow(editingItem.id, updatedData);
-      setIsEditModalOpen(false);
+        onUpdateRow(editingItem.id, updatedData);
+        setIsEditModalOpen(false);
     };
 
     return (
@@ -56,7 +57,6 @@ function DataSet({
             <table>
                 <thead>
                 <tr>
-                    
                     {headers.map((header, index) => (
                         <th key={index}>{renderHeader ? renderHeader(header) : header.title}</th>
                     ))}
@@ -65,21 +65,20 @@ function DataSet({
                 </thead>
                 <tbody>
                 {data.map((item) => (
-                    <tr 
-                      key={item.id} 
-                      className={selectRows.includes(item.id) ? 'selected' : ''}
+                    <tr
+                        key={item.id}
+                        className={selectRows.includes(item.id) ? 'selected' : ''}
                     >
-                    
                         {headers.map((header) => (
-                            <td 
-                              key={header.key}
-                              onClick={(event) => handleRowClick(item, event)}
+                            <td
+                                key={header.key}
+                                onClick={(event) => handleRowClick(item, event)}
                             >
                                 {renderRow ? renderRow(item[header.key]) : item[header.key]}
                             </td>
                         ))}
                         <td>
-                          <button onClick={() => handleEditItem(item)}>Редактировать</button>
+                            <button onClick={() => handleEditItem(item)}>Редактировать</button>
                         </td>
                     </tr>
                 ))}
@@ -87,19 +86,21 @@ function DataSet({
             </table>
 
             <div className="actions">
-              <button onClick={() => setIsModalOpen(true)}>Добавить</button>
-              <button 
-                onClick={handleDeleteSelected}
-                disabled={selectRows.length === 0}
-              >
-                Удалить выбранные ({selectRows.length})
-              </button>
+                <button onClick={() => setIsModalOpen(true)}>Добавить</button>
+                <button
+                    onClick={handleDeleteSelected}
+                    disabled={selectRows.length === 0}
+                >
+                    Удалить выбранные ({selectRows.length})
+                </button>
             </div>
 
             <Modal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 onSubmit={onAddRow}
+                headers={headers}
+                validationSchema={validationSchema}
             />
 
             <EditModal
@@ -108,6 +109,7 @@ function DataSet({
                 onSubmit={handleSubmitEdit}
                 initialData={editingItem}
                 headers={headers}
+                validationSchema={validationSchema}
             />
         </>
     );

@@ -1,52 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import '../styles/Modal.css';
 
-function Modal({ isOpen, onClose, onSubmit, maxId }) {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        postId: null,
-        body: ''
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        onSubmit({ id: maxId + 1, ...formData });
-        onClose();
-    };
-
+function Modal({ isOpen, onClose, onSubmit, headers, validationSchema }) {
     if (!isOpen) return null;
+
+    const initialValues = headers.reduce((acc, header) => {
+        acc[header.key] = '';
+        return acc;
+    }, {});
 
     return (
         <div className="modal-overlay">
             <div className="modal-content">
                 <h2>Добавить новую строку</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        PostID:
-                        <input type="text" name="postId" value={formData.postId} onChange={handleChange} required />
-                    </label>
-                    <label>
-                        Имя:
-                        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-                    </label>
-                    <label>
-                        Email:
-                        <input type="text" name="email" value={formData.email} onChange={handleChange} required />
-                    </label>
-                    <label>
-                        Коммент:
-                        <input type="text" name="body" value={formData.body} onChange={handleChange} required />
-                    </label>
-
-                    <button type="submit">Сохранить</button>
-                    <button type="button" onClick={onClose}>Закрыть</button>
-                </form>
+                <Formik
+                    initialValues={initialValues}
+                    validationSchema={Yup.object().shape(validationSchema)}
+                    onSubmit={(values, { setSubmitting }) => {
+                        onSubmit(values);
+                        setSubmitting(false);
+                        onClose();
+                    }}
+                >
+                    {({ isSubmitting }) => (
+                        <Form>
+                            {headers.map(header => (
+                                <div key={header.key} className="form-group">
+                                    <label>{header.title}</label>
+                                    <Field type="text" name={header.key} />
+                                    <ErrorMessage name={header.key} component="div" className="error-message" />
+                                </div>
+                            ))}
+                            <div className="modal-actions">
+                                <button type="submit" disabled={isSubmitting}>
+                                    Сохранить
+                                </button>
+                                <button type="button" onClick={onClose}>
+                                    Закрыть
+                                </button>
+                            </div>
+                        </Form>
+                    )}
+                </Formik>
             </div>
         </div>
     );
