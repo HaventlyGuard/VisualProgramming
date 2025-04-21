@@ -1,0 +1,6 @@
+@WebApplication1_HostAddress = http://localhost:3000
+
+GET {{WebApplication1_HostAddress}}https://localhost:3000/comments
+Accept: application/json
+
+###

@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/comments');
+        const response = await axios.get('http://localhost:5050/comments');
         setFetchDataState(response.data);
         console.log("Сайт не отвечает");
       } catch (error) {
@@ -56,7 +56,7 @@ function App() {
       
       // Имитация POST запроса
       await new Promise(resolve => setTimeout(resolve, 500));
-      const response = await axios.post('https://jsonplaceholder.typicode.com/comments', newRow);
+      const response = await axios.post('http://localhost:5050/comments', newRow);
       setFetchDataState(prev => [...prev, response.data]);
     } catch (err) {
       console.error('Failed to add row:', err);
@@ -71,7 +71,7 @@ function App() {
 
       await Promise.all(
         ids.map(id => 
-          axios.delete(`https://jsonplaceholder.typicode.com/comments/${id}`)
+          axios.delete(`http://localhost:5050/comments/${id}`)
         )
       );
       
@@ -91,7 +91,7 @@ function App() {
       // Имитация PATCH запроса
       await new Promise(resolve => setTimeout(resolve, 500));
       const response = await axios.patch(
-        `https://jsonplaceholder.typicode.com/comments/${id}`,
+        `http://localhost:5050/comments/${id}`,
         updatedData
       );
       
