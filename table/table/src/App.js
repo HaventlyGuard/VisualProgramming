@@ -39,6 +39,7 @@ function App() {
       try {
         const response = await axios.get('https://jsonplaceholder.typicode.com/comments');
         setFetchDataState(response.data);
+        console.log("Сайт не отвечает");
       } catch (error) {
         console.error('Error fetching data:', error);
       }
