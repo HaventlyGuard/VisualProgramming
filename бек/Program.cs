@@ -1,11 +1,17 @@
+using dz1.Data;
 using dz1.Model;
 using dz1.Repositories;
 using dz1.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+string StringConnetcion = builder.Configuration.GetConnectionString("WebApiDatabase");
 
+//builder.Services.AddDbContext<AppDBContext>(options => options.UseNpgsql(StringConnetcion));
+builder.Services.AddDbContext<AppDBContext>(options => options.UseNpgsql(StringConnetcion), ServiceLifetime.Singleton);
+builder.Services.AddSingleton<CommentService>();
 builder.Services.AddSingleton<ICommentRepository, CommentRepository>();
-builder.Services.AddScoped<CommentService>();
 
 builder.Services.AddCors(options =>
 {
@@ -16,6 +22,7 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+
 
 var app = builder.Build();
 app.UseCors();

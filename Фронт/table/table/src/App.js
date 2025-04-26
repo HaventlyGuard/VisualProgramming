@@ -8,24 +8,6 @@ function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [fetchDataState, setFetchDataState] = useState([]);
   
-  const [optimisticData, addOptimisticData] = useOptimistic(
-    fetchDataState,
-    (state, action) => {
-      switch (action.type) {
-        case 'add':
-          return [...state, { ...action.data, id: Math.max(...state.map(item => item.id), 0) + 1 }];
-        case 'delete':
-          return state.filter(item => !action.ids.includes(item.id));
-        case 'update':
-          return state.map(item => 
-            item.id === action.id ? { ...item, ...action.data } : item
-          );
-        default:
-          return state;
-      }
-    }
-  );
-
   const headers = [
     { title: 'PostID', key: 'postId' },
     { title: 'ID', key: 'id' },
@@ -50,56 +32,60 @@ function App() {
 
   const handleAddRow = async (newRow) => {
     try {
-      startTransition(() => {
-        addOptimisticData({ type: 'add', data: newRow });
+      console.log("Отправляемые данные:", newRow);
+      
+  
+      const dataToSend = {
+        postId: Number(newRow.postId),
+        name: String(newRow.name),
+        email: String(newRow.email),
+        body: String(newRow.body)
+      };
+      
+      const response = await axios.post('http://localhost:5050/comments', dataToSend, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
       
-      // Имитация POST запроса
-      await new Promise(resolve => setTimeout(resolve, 500));
-      const response = await axios.post('http://localhost:5050/comments', newRow);
+      console.log("Ответ сервера:", response.data);
       setFetchDataState(prev => [...prev, response.data]);
-    } catch (err) {
-      console.error('Failed to add row:', err);
+    } catch (error) {
+      console.error('Полная ошибка:', {
+        request: error.config?.data,
+        response: error.response?.data
+      });
+      throw error;
     }
   };
 
   const handleDeleteRows = async (ids) => {
     try {
-      startTransition(() => {
-        addOptimisticData({ type: 'delete', ids });
-      });
-
       await Promise.all(
         ids.map(id => 
           axios.delete(`http://localhost:5050/comments/${id}`)
         )
       );
-      
       setFetchDataState(prev => prev.filter(item => !ids.includes(item.id)));
       setSelectRows([]);
-    } catch (err) {
-      console.error('Failed to delete rows:', err);
+    } catch (error) {
+      console.error("Ошибка при удалении:", error.response?.data || error.message);
     }
   };
+ 
 
   const handleUpdateRow = async (id, updatedData) => {
     try {
-      startTransition(() => {
-        addOptimisticData({ type: 'update', id, data: updatedData });
-      });
-
-      // Имитация PATCH запроса
-      await new Promise(resolve => setTimeout(resolve, 500));
       const response = await axios.patch(
         `http://localhost:5050/comments/${id}`,
         updatedData
       );
-      
       setFetchDataState(prev => 
         prev.map(item => item.id === id ? response.data : item)
       );
-    } catch (err) {
-      console.error('Failed to update row:', err);
+    } catch (error) {
+      console.error('Error updating row:', error.response?.data || error.message);
+      throw error; 
     }
   };
 
@@ -108,7 +94,7 @@ function App() {
       <div className='DataTable'>
         <DataSet
           headers={headers}
-          data={optimisticData}
+          data={fetchDataState}
           renderRow={(value) => value}
           renderHeader={(header) => header.title}
           selectRows={selectRows}

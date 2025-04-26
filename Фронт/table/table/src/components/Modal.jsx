@@ -5,7 +5,7 @@ function Modal({ isOpen, onClose, onSubmit, maxId }) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        postId: null,
+        postId: '',
         body: ''
     });
 
@@ -16,7 +16,6 @@ function Modal({ isOpen, onClose, onSubmit, maxId }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ id: maxId + 1, ...formData });
         onClose();
     };
 
@@ -29,7 +28,7 @@ function Modal({ isOpen, onClose, onSubmit, maxId }) {
                 <form onSubmit={handleSubmit}>
                     <label>
                         PostID:
-                        <input type="text" name="postId" value={formData.postId} onChange={handleChange} required />
+                        <input type="number" name="postId" value={formData.postId} onChange={handleChange} required />
                     </label>
                     <label>
                         Имя:

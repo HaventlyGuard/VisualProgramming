@@ -3,44 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Timofey\\source\\repos\\dz1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\dz1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:dz1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\repositories\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:repositories\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\repositories\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:repositories\\commentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\repositories\\icommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:repositories\\icommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\data\\comments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:data\\comments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:model\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\dz1.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:dz1.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\dz1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:dz1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\dz1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:dz1.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|c:\\users\\timofey\\source\\repos\\dz1\\repositories\\icommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9FA9FBF-DBA8-4319-BBC0-F0887EE0D04B}|dz1.csproj|solutionrelative:repositories\\icommentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,33 +62,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 12,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-21T19:06:20.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "dz1",
-              "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj",
-              "RelativeDocumentMoniker": "dz1.csproj",
-              "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj",
-              "RelativeToolTip": "dz1.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-21T19:06:14.501Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -87,104 +74,167 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "comments.cs",
+              "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Data\\comments.cs",
+              "RelativeDocumentMoniker": "Data\\comments.cs",
+              "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Data\\comments.cs",
+              "RelativeToolTip": "Data\\comments.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T08:04:27.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Data\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDBContext.cs",
+              "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Data\\AppDBContext.cs",
+              "RelativeToolTip": "Data\\AppDBContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T07:57:51.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "dz1",
+              "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj",
+              "RelativeDocumentMoniker": "dz1.csproj",
+              "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj",
+              "RelativeToolTip": "dz1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-26T07:56:15.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-21T19:06:20.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "dz1",
+              "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj",
+              "RelativeDocumentMoniker": "dz1.csproj",
+              "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj",
+              "RelativeToolTip": "dz1.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-21T19:06:14.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "data.json",
               "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\data.json",
               "RelativeDocumentMoniker": "data.json",
               "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\data.json",
               "RelativeToolTip": "data.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAClAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-04-21T18:57:16.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "dz1.http",
               "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.http",
               "RelativeDocumentMoniker": "dz1.http",
               "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.http",
               "RelativeToolTip": "dz1.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2025-04-21T18:49:53.094Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-04-21T18:49:52.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "CommentService.cs",
               "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Services\\CommentService.cs",
               "RelativeDocumentMoniker": "Services\\CommentService.cs",
               "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Services\\CommentService.cs",
               "RelativeToolTip": "Services\\CommentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T18:42:52.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "ICommentRepository.cs",
               "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Repositories\\ICommentRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ICommentRepository.cs",
               "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Repositories\\ICommentRepository.cs",
               "RelativeToolTip": "Repositories\\ICommentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T18:41:46.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-21T18:41:46.563Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "CommentRepository.cs",
               "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Repositories\\CommentRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\CommentRepository.cs",
               "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Repositories\\CommentRepository.cs",
               "RelativeToolTip": "Repositories\\CommentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T18:40:18.948Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Model\\Comment.cs",
               "RelativeDocumentMoniker": "Model\\Comment.cs",
               "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Model\\Comment.cs",
               "RelativeToolTip": "Model\\Comment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T18:38:44.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Timofey\\source\\repos\\dz1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Timofey\\source\\repos\\dz1\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T18:33:40.593Z",
               "EditorCaption": ""

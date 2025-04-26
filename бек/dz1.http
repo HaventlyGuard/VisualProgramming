@@ -1,6 +1,20 @@
 @WebApplication1_HostAddress = http://localhost:3000
 
-GET {{WebApplication1_HostAddress}}https://localhost:3000/comments
-Accept: application/json
+GET http://localhost:5050/comments
 
 ###
+
+
+GET http://localhost:5050/comments/1
+
+
+###
+
+POST http://localhost:5050/comments
+Content-type: application/json
+{
+  "postId": 1123123,
+  "name": "thung thung thung sahur",
+  "email": "Eliseo@gardner.biz",
+  "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+}

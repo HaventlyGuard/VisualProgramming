@@ -5,7 +5,12 @@ function EditModal({ isOpen, onClose, onSubmit, initialData, headers }) {
 
   useEffect(() => {
     if (initialData) {
-      setFormData({ ...initialData });
+      // Копируем данные и преобразуем числа, если нужно
+      const preparedData = { ...initialData };
+      if ('postId' in preparedData) {
+        preparedData.postId = preparedData.postId.toString();
+      }
+      setFormData(preparedData);
     }
   }, [initialData]);
 
@@ -14,9 +19,21 @@ function EditModal({ isOpen, onClose, onSubmit, initialData, headers }) {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    try {
+      // Преобразуем данные перед отправкой
+      const dataToSend = { ...formData };
+      if ('postId' in dataToSend) {
+        dataToSend.postId = parseInt(dataToSend.postId) || 1;
+      }
+      
+      await onSubmit(dataToSend);
+      onClose();
+    } catch (error) {
+      console.error('Ошибка при обновлении данных:', error);
+      alert('Не удалось обновить данные. Проверьте консоль для подробностей.');
+    }
   };
 
   if (!isOpen) return null;
@@ -29,12 +46,23 @@ function EditModal({ isOpen, onClose, onSubmit, initialData, headers }) {
           {headers.map(header => (
             <div key={header.key} className="form-group">
               <label>{header.title}</label>
-              <input
-                type="text"
-                name={header.key}
-                value={formData[header.key] || ''}
-                onChange={handleChange}
-              />
+              {header.key === 'body' ? (
+                <textarea
+                  name={header.key}
+                  value={formData[header.key] || ''}
+                  onChange={handleChange}
+                  required
+                />
+              ) : (
+                <input
+                  type={header.key === 'postId' ? 'number' : header.key === 'email' ? 'email' : 'text'}
+                  name={header.key}
+                  value={formData[header.key] || ''}
+                  onChange={handleChange}
+                  required
+                  min={header.key === 'postId' ? '1' : undefined}
+                />
+              )}
             </div>
           ))}
           <div className="modal-actions">

@@ -1,4 +1,5 @@
-﻿using dz1.Model;
+﻿using dz1.Data;
+using dz1.Model;
 using System.Text.Json;
 
 namespace dz1.Repositories
@@ -7,65 +8,56 @@ namespace dz1.Repositories
 {
     public class CommentRepository : ICommentRepository
     {
-        private Dictionary<int, Comment> _comments = new Dictionary<int, Comment>();
+        private AppDBContext dBContext;
         private int _lastId = 0;
 
-        public CommentRepository()
+        public CommentRepository(AppDBContext dBContext)
         {
-            LoadDataFromJson();
+            this.dBContext = dBContext;
         }
 
-        private void LoadDataFromJson()
-        {
-            string filePath = "data.json";
+       
 
-            if (File.Exists(filePath))
-            {
-                string jsonData = File.ReadAllText(filePath);
-                var commentsList = JsonSerializer.Deserialize<List<Comment>>(jsonData);
-
-                if (commentsList != null && commentsList.Any())
-                {
-                    foreach (var comment in commentsList)
-                    {
-                        _comments.Add(comment.id, comment);
-                    }
-
-                    // Устанавливаем _lastId как максимальный Id из загруженных комментариев
-                    _lastId = _comments.Keys.Max();
-                }
-            }
-        }
 
         public void Add(Comment comment)
         {
-            ++_lastId;
-            comment.id = _lastId;
-            _comments.Add(comment.id, comment);
+            var id = comment.id;
+            Comment comment1 = new Comment() { postId = comment.postId, name = comment.name, email = comment.email, body = comment.body };
+            dBContext.Comments.Add(comment1);
+            dBContext.SaveChanges();
         }
 
         public void Delete(int id)
-        {
-            if (_comments.ContainsKey(id))
-            {
-                _comments.Remove(id);
-            }
+        { 
+          var deletedItem = dBContext.Comments.FirstOrDefault(x => x.id == id);
+            if (deletedItem != null) 
+                dBContext.Comments.Remove(deletedItem);
+
+            dBContext.SaveChanges();
         }
 
         public Comment GetById(int id)
         {
-            return _comments[id];
+            return dBContext.Comments.FirstOrDefault(x => x.id == id);
         }
 
         public void Update(int id, Comment comment)
         {
-            _comments[id] = comment;
-            _comments[id].id = id;
+           var commentId = comment.id;
+           var commentFromDB =  dBContext.Comments.FirstOrDefault(x => x.id == commentId);
+            if (commentFromDB != null) {
+                commentFromDB.postId = comment.postId;
+                commentFromDB.name = comment.name;
+                commentFromDB.email = comment.email;
+                commentFromDB.body = comment.body;
+                dBContext.SaveChanges();
+            }
+            
         }
 
         public IEnumerable<Comment> GetAll()
         {
-            return _comments.Values;
+            return dBContext.Comments.ToList();
         }
     }
 }

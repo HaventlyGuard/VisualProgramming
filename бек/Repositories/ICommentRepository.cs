@@ -11,3 +11,4 @@ namespace dz1.Repositories
         void Delete(int id);
     }
 }
+
