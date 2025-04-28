@@ -13,8 +13,8 @@ GET http://localhost:5050/comments/1
 POST http://localhost:5050/comments
 Content-type: application/json
 {
-  "postId": 1123123,
-  "name": "thung thung thung sahur",
+  "postId": 5,
+  "name": "Lev Gunzenov",
   "email": "Eliseo@gardner.biz",
-  "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+  "body": "trallelo trallala thung thung est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
 }

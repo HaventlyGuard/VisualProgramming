@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 string StringConnetcion = builder.Configuration.GetConnectionString("WebApiDatabase");
 
 //builder.Services.AddDbContext<AppDBContext>(options => options.UseNpgsql(StringConnetcion));
-builder.Services.AddDbContext<AppDBContext>(options => options.UseNpgsql(StringConnetcion), ServiceLifetime.Singleton);
+builder.Services.AddDbContext<AppDBContext>(options => options.UseNpgsql(StringConnetcion), ServiceLifetime.Singleton); //входной параметр (типа DbContextOptionsBuilder)
 builder.Services.AddSingleton<CommentService>();
 builder.Services.AddSingleton<ICommentRepository, CommentRepository>();
 

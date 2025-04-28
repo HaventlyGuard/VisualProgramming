@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj": {}
+    "C:\\Users\\Timofey\\Desktop\\вуз\\Гит\\VisualProgramming\\бек\\dz1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj": {
+    "C:\\Users\\Timofey\\Desktop\\вуз\\Гит\\VisualProgramming\\бек\\dz1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj",
+        "projectUniqueName": "C:\\Users\\Timofey\\Desktop\\вуз\\Гит\\VisualProgramming\\бек\\dz1.csproj",
         "projectName": "dz1",
-        "projectPath": "C:\\Users\\Timofey\\source\\repos\\dz1\\dz1.csproj",
+        "projectPath": "C:\\Users\\Timofey\\Desktop\\вуз\\Гит\\VisualProgramming\\бек\\dz1.csproj",
         "packagesPath": "C:\\Users\\Timofey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Timofey\\source\\repos\\dz1\\obj\\",
+        "outputPath": "C:\\Users\\Timofey\\Desktop\\вуз\\Гит\\VisualProgramming\\бек\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -38,7 +38,7 @@ namespace dz1.Repositories
 
         public Comment GetById(int id)
         {
-            return dBContext.Comments.FirstOrDefault(x => x.id == id);
+            return dBContext.Comments.FirstOrDefault(x => x.id == id); //Ищет первый элемент в коллекции Comments, удовлетворяющий условию, если такого нет возвращает null
         }
 
         public void Update(int id, Comment comment)
