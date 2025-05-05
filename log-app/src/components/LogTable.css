@@ -1,0 +1,57 @@
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.logs-table th,
+.logs-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logs-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    position: sticky;
+    top: 0;
+}
+
+.logs-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.log-level-information {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.log-level-warning {
+    color: #ffc107;
+    font-weight: 500;
+}
+
+.log-level-error {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.no-logs {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+    font-size: 1.1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 
